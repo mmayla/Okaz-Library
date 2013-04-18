@@ -1,0 +1,5 @@
+C:\Users\Divoo\documents\visual studio 2012\Projects\Okaz Library\Okaz Library\bin\Okaz Library.dll
+C:\Users\Divoo\documents\visual studio 2012\Projects\Okaz Library\Okaz Library\bin\Okaz Library.pdb
+C:\Users\Divoo\documents\visual studio 2012\Projects\Okaz Library\Okaz Library\obj\Debug\Okaz Library.dll
+C:\Users\Divoo\documents\visual studio 2012\Projects\Okaz Library\Okaz Library\obj\Debug\Okaz Library.pdb
+C:\Users\Divoo\documents\visual studio 2012\Projects\Okaz Library\Okaz Library\obj\Debug\Okaz Library.csprojResolveAssemblyReference.cache
