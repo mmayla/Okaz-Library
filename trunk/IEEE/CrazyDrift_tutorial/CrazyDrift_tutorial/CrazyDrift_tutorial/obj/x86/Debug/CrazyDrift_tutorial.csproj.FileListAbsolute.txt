@@ -1,0 +1,10 @@
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\Content\background.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\Content\status.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\CrazyDrift_tutorial.exe
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\CrazyDrift_tutorial.pdb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\obj\x86\Debug\CrazyDrift_tutorial.csprojResolveAssemblyReference.cache
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\obj\x86\Debug\CrazyDrift_tutorial.exe
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\obj\x86\Debug\CrazyDrift_tutorial.pdb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\Content\player_car.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift_tutorial\CrazyDrift_tutorial\CrazyDrift_tutorial\bin\x86\Debug\Content\enemy_car.xnb

@@ -1,0 +1,21 @@
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\CrazyDrift.exe
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\CrazyDrift.pdb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\CrazyDrift.csprojResolveAssemblyReference.cache
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\CrazyDrift.exe
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\CrazyDrift.pdb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\player_car.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\people_car.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\background.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\statue.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\StatueFont.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\finish.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\begin.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\the fourth horsman.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\the fourth horsman.wma
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\BoomFX.xnb
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\Content\BoomFX.wma
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\CrazyDrift.exe.manifest
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\bin\x86\Debug\CrazyDrift.application
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\CrazyDrift.exe.manifest
+C:\Users\Divoo\Documents\Visual Studio 2010\Projects\CrazyDrift\CrazyDrift\CrazyDrift\obj\x86\Debug\CrazyDrift.application
