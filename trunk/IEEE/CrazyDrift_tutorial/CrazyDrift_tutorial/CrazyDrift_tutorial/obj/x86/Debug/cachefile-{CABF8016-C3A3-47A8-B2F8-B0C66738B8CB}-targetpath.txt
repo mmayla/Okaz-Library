@@ -1,4 +1,0 @@
-Content\background.xnb
-Content\status.xnb
-Content\player_car.xnb
-Content\enemy_car.xnb
