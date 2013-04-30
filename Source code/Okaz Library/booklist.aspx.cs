@@ -13,5 +13,10 @@ namespace Okaz_Library
         {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
