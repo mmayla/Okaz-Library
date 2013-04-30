@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="booklist.aspx.cs" Inherits="Okaz_Library.booklist" %>
 
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -35,8 +37,18 @@
 </script>
 <!--////// END  \\\\\\\-->
 
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 120px;
+            height: 112px;
+        }
+    </style>
+
 </head>
 <body>
+
+    <form id="form1" runat="server">
 
 <div id="templatemo_outer_wrapper">
 
@@ -62,9 +74,157 @@
         
         <div id="templatemo_main">
         	<div id="content_title_box">
-            	<h1> Library</h1>
-               	<p>the books with category</p>
-               
+            	<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; المكتبة &nbsp;</h1>
+               	<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; تصنيفات الكتب<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="25px" Width="163px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                        <asp:ListItem>الكل</asp:ListItem>
+                        <asp:ListItem>إسلامية</asp:ListItem>
+                        <asp:ListItem>أدب</asp:ListItem>
+                        <asp:ListItem Value="تعليمية"></asp:ListItem>
+                        <asp:ListItem>دراما</asp:ListItem>
+                        <asp:ListItem>رواية</asp:ListItem>
+                        <asp:ListItem>ساخرة</asp:ListItem>
+                    </asp:DropDownList>
+                    </strong></p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp; قائمة الكتب الموجودة</strong>&nbsp;<br />
+                </p>
+                <p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </p>
+                <!DOCTYPE html>
+
+
+
+
+
+                <asp:ListView ID="ListView1" runat="server" DataKeyNames="book_ID" DataSourceID="SqlDataSource1">
+                    <AlternatingItemTemplate>
+                        <li style="background-color: #FFF8DC;">book_ID:
+                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
+                            <br />
+                            Name:
+                            <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                            <br />
+                            Lock:
+                            <asp:Label ID="LockLabel" runat="server" Text='<%# Eval("Lock") %>' />
+                            <br />
+                            Category:
+                            <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                            <br />
+                            Available:
+                            <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                            <br />
+                        </li>
+                    </AlternatingItemTemplate>
+                    <EditItemTemplate>
+                        <li style="background-color: #008A8C;color: #FFFFFF;">book_ID:
+                            <asp:Label ID="book_IDLabel1" runat="server" Text='<%# Eval("book_ID") %>' />
+                            <br />
+                            Name:
+                            <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                            <br />
+                            Lock:
+                            <asp:TextBox ID="LockTextBox" runat="server" Text='<%# Bind("Lock") %>' />
+                            <br />
+                            Category:
+                            <asp:TextBox ID="CategoryTextBox" runat="server" Text='<%# Bind("Category") %>' />
+                            <br />
+                            Available:
+                            <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                            <br />
+                            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                        </li>
+                    </EditItemTemplate>
+                    <EmptyDataTemplate>
+                        No data was returned.
+                    </EmptyDataTemplate>
+                    <InsertItemTemplate>
+                        <li style="">Name:
+                            <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                            <br />Lock:
+                            <asp:TextBox ID="LockTextBox" runat="server" Text='<%# Bind("Lock") %>' />
+                            <br />Category:
+                            <asp:TextBox ID="CategoryTextBox" runat="server" Text='<%# Bind("Category") %>' />
+                            <br />
+                            Available:
+                            <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                            <br />
+                            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                        </li>
+                    </InsertItemTemplate>
+                    <ItemSeparatorTemplate>
+<br />
+                    </ItemSeparatorTemplate>
+                    <ItemTemplate>
+                        <li style="background-color: #DCDCDC;color: #000000;">book_ID:
+                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
+                            <br />
+                            Name:
+                            <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                            <br />
+                            Lock:
+                            <asp:Label ID="LockLabel" runat="server" Text='<%# Eval("Lock") %>' />
+                            <br />
+                            Category:
+                            <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                            <br />
+                            Available:
+                            <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                            <br />
+                        </li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                            <li runat="server" id="itemPlaceholder" />
+                        </ul>
+                        <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                            <asp:DataPager ID="DataPager1" runat="server">
+                                <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">book_ID:
+                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
+                            <br />
+                            Name:
+                            <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                            <br />
+                            Lock:
+                            <asp:Label ID="LockLabel" runat="server" Text='<%# Eval("Lock") %>' />
+                            <br />
+                            Category:
+                            <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                            <br />
+                            Available:
+                            <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                            <br />
+                        </li>
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OkazLibrary1ConnectionString %>" SelectCommand="SELECT [book_ID], [Name], [Lock], [Category], [Available] FROM [book]"></asp:SqlDataSource>
+        
+        <div id="templatemo_footer">
+
+			<a href="index.aspx" class="current">Home</a> | <a href="aboutus.aspx">About Us</a> | <a href="contactus.aspx">Contact Us</a><br /><br />
+    
+        	<strong>Copyright © 2013</strong> <a href="#">Okaz Library</a> | <strong>Designed by</strong> <a href="http://www.templatemo.com" target="_parent">Infinity Dream</a>
+            <br />
+            <br />
+            <asp:Panel ID="Panel1" runat="server">
+            </asp:Panel>
+            
+	    </div>
+        
 
  
             </div> <!-- end of featured project -->
@@ -72,22 +232,64 @@
         
         <div id="templatemo_content">
         
-        	<div class="content_box cb_last">
-            	
-                <div class="cleaner"></div>
-            </div>
+        	<br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+&nbsp;&nbsp;
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         	
         </div> <!-- end of content -->
         
-        <div id="templatemo_footer">
-
-			<a href="index.aspx" class="current">Home</a> | <a href="aboutus.aspx">About Us</a> | <a href="contactus.aspx">Contact Us</a><br /><br />
-    
-        	Copyright © 2013 <a href="#">Okaz Library</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Infinity Dream</a>
-            
-	    </div>
-        
 	</div> <!-- end of wrapper -->
 </div> <!-- end of outer wrapper -->
+    </form>
 </body>
 </html>

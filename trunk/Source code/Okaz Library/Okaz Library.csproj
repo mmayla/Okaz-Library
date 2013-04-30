@@ -60,6 +60,7 @@
     <Content Include="aboutus.aspx" />
     <Content Include="booklist.aspx" />
     <Content Include="contactus.aspx" />
+    <Content Include="images.jpg" />
     <Content Include="index.aspx" />
     <Content Include="uploading.aspx" />
     <Content Include="Web.config" />
