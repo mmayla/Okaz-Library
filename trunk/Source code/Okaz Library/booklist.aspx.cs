@@ -18,5 +18,10 @@ namespace Okaz_Library
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

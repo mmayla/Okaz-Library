@@ -37,15 +37,7 @@
 </script>
 <!--////// END  \\\\\\\-->
 
-    <style type="text/css">
-        .auto-style1
-        {
-            width: 120px;
-            height: 112px;
-        }
-    </style>
-
-</head>
+    </head>
 <body>
 
     <form id="form1" runat="server">
@@ -76,7 +68,8 @@
         	<div id="content_title_box">
             	<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; المكتبة &nbsp;</h1>
                	<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; تصنيفات الكتب<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="margin-left: 0px" Text="بحث" Width="74px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:DropDownList ID="DropDownList1" runat="server" Height="25px" Width="163px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         <asp:ListItem>الكل</asp:ListItem>
                         <asp:ListItem>إسلامية</asp:ListItem>
@@ -86,28 +79,17 @@
                         <asp:ListItem>رواية</asp:ListItem>
                         <asp:ListItem>ساخرة</asp:ListItem>
                     </asp:DropDownList>
+                    <br />
                     </strong></p>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp; قائمة الكتب الموجودة</strong>&nbsp;<br />
                 </p>
-                <p>
+                <p><strong>
                     <br />
                     <br />
-                    <br />
-                    <br />
-                    <br />
-                </p>
-                <!DOCTYPE html>
-
-
-
-
-
-                <asp:ListView ID="ListView1" runat="server" DataKeyNames="book_ID" DataSourceID="SqlDataSource1">
+                    </strong></p>
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
                     <AlternatingItemTemplate>
-                        <li style="background-color: #FFF8DC;">book_ID:
-                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
-                            <br />
-                            Name:
+                        <li style="background-color: #FFF8DC;">Name:
                             <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
                             <br />
                             Lock:
@@ -119,13 +101,13 @@
                             Available:
                             <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
                             <br />
+                            Details:
+                            <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
+                            <br />
                         </li>
                     </AlternatingItemTemplate>
                     <EditItemTemplate>
-                        <li style="background-color: #008A8C;color: #FFFFFF;">book_ID:
-                            <asp:Label ID="book_IDLabel1" runat="server" Text='<%# Eval("book_ID") %>' />
-                            <br />
-                            Name:
+                        <li style="background-color: #008A8C;color: #FFFFFF;">Name:
                             <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
                             <br />
                             Lock:
@@ -136,6 +118,9 @@
                             <br />
                             Available:
                             <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                            <br />
+                            Details:
+                            <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' />
                             <br />
                             <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                             <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -151,9 +136,10 @@
                             <asp:TextBox ID="LockTextBox" runat="server" Text='<%# Bind("Lock") %>' />
                             <br />Category:
                             <asp:TextBox ID="CategoryTextBox" runat="server" Text='<%# Bind("Category") %>' />
-                            <br />
-                            Available:
+                            <br />Available:
                             <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                            <br />Details:
+                            <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' />
                             <br />
                             <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                             <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
@@ -163,10 +149,7 @@
 <br />
                     </ItemSeparatorTemplate>
                     <ItemTemplate>
-                        <li style="background-color: #DCDCDC;color: #000000;">book_ID:
-                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
-                            <br />
-                            Name:
+                        <li style="background-color: #DCDCDC;color: #000000;">Name:
                             <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
                             <br />
                             Lock:
@@ -177,6 +160,9 @@
                             <br />
                             Available:
                             <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                            <br />
+                            Details:
+                            <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
                             <br />
                         </li>
                     </ItemTemplate>
@@ -193,10 +179,7 @@
                         </div>
                     </LayoutTemplate>
                     <SelectedItemTemplate>
-                        <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">book_ID:
-                            <asp:Label ID="book_IDLabel" runat="server" Text='<%# Eval("book_ID") %>' />
-                            <br />
-                            Name:
+                        <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">Name:
                             <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
                             <br />
                             Lock:
@@ -208,11 +191,26 @@
                             Available:
                             <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
                             <br />
+                            Details:
+                            <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
+                            <br />
                         </li>
                     </SelectedItemTemplate>
                 </asp:ListView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OkazLibrary1ConnectionString %>" SelectCommand="SELECT [book_ID], [Name], [Lock], [Category], [Available] FROM [book]"></asp:SqlDataSource>
-        
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OkazLibrary1ConnectionString %>" SelectCommand="SELECT [Name], [Lock], [Category], [Available], [Details] FROM [book]"></asp:SqlDataSource>
+                <p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </p>
+                <!DOCTYPE html>
+
+
+
+
+
         <div id="templatemo_footer">
 
 			<a href="index.aspx" class="current">Home</a> | <a href="aboutus.aspx">About Us</a> | <a href="contactus.aspx">Contact Us</a><br /><br />
@@ -230,61 +228,29 @@
             </div> <!-- end of featured project -->
         </div> <!-- end of main -->
         
-        <div id="templatemo_content">
-        
-        	<br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
+        <!--div-- id="templatemo_content"-->
+        	
 &nbsp;&nbsp;
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
+ <!-- Codes by HTML.am -->
+<!--div style="background-image:url(http://www.html.am/images/backgrounds/background-image-2.gif); background-repeat:repeat;width:90px;height:80px;border:1px solid black;padding:10px;" <a href="http://www.html.am/html-codes/image-codes/background-image-code.cfm"></a>
+</--div-->
+<style>
+body
+{
+list-style-image:url('images.jpg');
+list-style-type;
+background-position:left top;
+margin-right:100px
+}
+</style>
+<!--p>
+<img src="images.jpg" alt="Smiley face" style="float:left" width="100" height="90">
+</!--p-->
+
             <br />
             <br />
             <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <img alt="image" class="auto-style1" src="images.jpg" /><br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+           
         	
         </div> <!-- end of content -->
         
