@@ -99,7 +99,7 @@ em { color: #CCC; }
 #fp_content a:hover span { font-weight: bold; font-size: 24px;  }
 
 
-#content_title_box { width: 820px; height: 225px; padding: 60px 100px 0; margin-bottom: 40px; color: #333; font-size: 18px; line-height: 30px; background: url(images/templatemo_content_title_box.png) no-repeat center }
+#content_title_box { width: 820px; height: 820px; padding: 60px 100px 0; margin-bottom: 40px; color: #333; font-size: 18px; line-height: 30px; background: url(images/templatemo_content_title_box.png) no-repeat center }
 #content_title_box h1 { color: #31302e; font-weight: bold; /* text-shadow: 1px 1px 1px #b0ada7; */ margin-bottom: 25px  }
 
 #templatemo_content { clear: both; width: 980px; padding: 0 20px 40px }
