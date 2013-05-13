@@ -254,6 +254,17 @@ margin-right:100px
         	
         </div> <!-- end of content -->
         
+<<<<<<< .mine
+        <div id="templatemo_footer">
+
+			<a href="index.aspx" >الرئيسية</a> | <a href="Admin/login.aspx">تسجيل دخول مسؤول</a> <br /><br />
+    
+        	Copyright © 2013 <a href="#">Okaz Library</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Infinity Dream</a>
+            
+	    </div>
+        
+=======
+>>>>>>> .r20
 	</div> <!-- end of wrapper -->
 </div> <!-- end of outer wrapper -->
     </form>
