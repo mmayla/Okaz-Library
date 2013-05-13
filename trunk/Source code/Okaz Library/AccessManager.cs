@@ -12,7 +12,7 @@ namespace Okaz_Library
     public class AccessManager
     {
         SqlConnection Database_connection = new SqlConnection();
-        string connstr = "integrated security=SSPI;" + "data source='.';" + "initial catalog='OkazLibrary'"; //requred change
+        string connstr = "integrated security=SSPI;" + "data source='.';" + "initial catalog='OkazLibrary'"; //required change
         SqlDataAdapter genadap = new SqlDataAdapter();
         DataSet gends = new DataSet();
         SqlCommand gencommand = new SqlCommand();
@@ -43,17 +43,18 @@ namespace Okaz_Library
 
         public void Query(string command)
         {
+            connecttoDatabase();
             gencommand.CommandType = CommandType.Text;
             gencommand.CommandText = command;
             gencommand.Connection = Database_connection;
             gencommand.ExecuteNonQuery();
         }
 
-        public int getUserID(string email)
+        public int getAdminID(string email)
         {
             gencommand.CommandType = CommandType.Text;
             gencommand.Connection = Database_connection;
-            gencommand.CommandText = "select ID from CMPdatabase.dbo.[User] where Email= '" + email + "'";
+            gencommand.CommandText = "select M_ID from OkazLibrary.dbo.manager where Email='"+email+"'";
             SqlDataReader reader = gencommand.ExecuteReader();
 
             int id = -1;
@@ -65,11 +66,11 @@ namespace Okaz_Library
             return id;
         }
 
-        public string getUserPass(int ID)
+        public string getAdminPass(int ID)
         {
             gencommand.CommandType = CommandType.Text;
             gencommand.Connection = Database_connection;
-            gencommand.CommandText = "select [Password] from CMPdatabase.dbo.[User] where ID= " + ID.ToString() + "";
+            gencommand.CommandText = "select [Phone Number] from OkazLibrary.dbo.manager where M_ID="+ID.ToString()+"";
             SqlDataReader reader = gencommand.ExecuteReader();
 
             string password = "";
@@ -82,20 +83,48 @@ namespace Okaz_Library
 
         }
 
-        public string getUserPosition(int ID)
+        public string getAdminPosition(int ID) //if Admin or Manager
         {
             gencommand.CommandType = CommandType.Text;
             gencommand.Connection = Database_connection;
-            gencommand.CommandText = "select Position from CMPdatabase.dbo.[User] where ID= " + ID.ToString() + "";
+            gencommand.CommandText = "select admin from OkazLibrary.dbo.manager where M_ID="+ID.ToString()+"";
             SqlDataReader reader = gencommand.ExecuteReader();
 
             string position = "";
             if (reader.Read())
             {
-                position = reader.GetSqlString(0).ToString();
+               // position = reader.GetSqlString(0).ToString();
+                position = reader.GetSqlInt32(0).ToString();
+
+                if (position == "1")
+                    position = "Admin";
+                else if (position == "0")
+                    position = "Manager";
             }
             reader.Close();
             return position;
+        }
+
+        public string getAdminName(int ID) //if Admin or Manager
+        {
+            gencommand.CommandType = CommandType.Text;
+            gencommand.Connection = Database_connection;
+            gencommand.CommandText = "select Name from OkazLibrary.dbo.manager where M_ID="+ID.ToString()+"";
+            SqlDataReader reader = gencommand.ExecuteReader();
+
+            string name = "";
+            if (reader.Read())
+            {
+                // position = reader.GetSqlString(0).ToString();
+                name = reader.GetString(0);
+
+                if (name == "1")
+                    name = "Admin";
+                else if (name == "0")
+                    name = "Manager";
+            }
+            reader.Close();
+            return name;
         }
 
         public void setDataGrid(GridView GV, string scomm)
