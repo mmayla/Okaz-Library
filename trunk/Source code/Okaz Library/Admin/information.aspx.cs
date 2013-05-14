@@ -14,12 +14,34 @@ namespace Okaz_Library.Admin
             try
             {
                 Label1.Text = "اهلا " + Session["Name"].ToString();
-
+                droplistValidation();
             }
 
             catch (NullReferenceException)
             {
                 Response.Redirect("Login.aspx");
+            }
+        }
+
+        void droplistValidation()
+        {
+            if (DropDownList1.SelectedIndex == 0)
+            {
+                Panel1.Visible = true;
+                Panel2.Visible = false;
+                Panel3.Visible = false;
+            }
+            else if (DropDownList1.SelectedIndex == 1)
+            {
+                Panel1.Visible = false;
+                Panel2.Visible = true;
+                Panel3.Visible = false;
+            }
+            else
+            {
+                Panel1.Visible = false;
+                Panel2.Visible = false;
+                Panel3.Visible = true;
             }
         }
     }
