@@ -38,11 +38,8 @@
             <div class="cleaner"></div>
 		</div>   <!-- end of header -->
         
-        <div id="templatemo_main">
-        	<div id="content_title_box">
-            	<h1>Contact Information</h1>
-               	<p>place to deliver the books ...etc</p>
-            </div> <!-- end of featured project -->
+        <div>
+        	<br /><br /><br /><br /><br /><br />
         </div> <!-- end of main -->
         
         <div id="templatemo_content">
