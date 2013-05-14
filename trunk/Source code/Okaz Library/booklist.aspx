@@ -35,8 +35,17 @@
 </script>
 <!--////// END  \\\\\\\-->
 
+    <style type="text/css">
+        .auto-style1
+        {
+            font-size: xx-large;
+        }
+    </style>
+
 </head>
 <body>
+
+    <form id="form1" runat="server">
 
 <div id="templatemo_outer_wrapper">
 
@@ -62,8 +71,146 @@
         
         <div id="templatemo_main">
         	<div id="content_title_box">
-            	<h1> Library</h1>
-               	<p>the books with category</p>
+            	<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style1">المكتبة</span> &nbsp;</h1>
+               	<p>
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="80px" Width="176px">
+                        <asp:ListItem>أدب</asp:ListItem>
+                        <asp:ListItem>اقتصاد و اعمال</asp:ListItem>
+                        <asp:ListItem>تاريخ</asp:ListItem>
+                        <asp:ListItem>تعليمية</asp:ListItem>
+                        <asp:ListItem>تكنولوجيا</asp:ListItem>
+                        <asp:ListItem>دينية</asp:ListItem>
+                        <asp:ListItem>رواية</asp:ListItem>
+                        <asp:ListItem>سياسة</asp:ListItem>
+                        <asp:ListItem>شعر و فنون</asp:ListItem>
+                        <asp:ListItem>علوم طبيعية</asp:ListItem>
+                        <asp:ListItem>علم نفس</asp:ListItem>
+                        <asp:ListItem>فكر و فلسفة</asp:ListItem>
+                        <asp:ListItem>فلك</asp:ListItem>
+                        <asp:ListItem>مذكرات</asp:ListItem>
+                        <asp:ListItem>مراة وأسرة</asp:ListItem>
+                    </asp:DropDownList>
+                </p>
+                <p>
+                    <asp:Button ID="Button1" runat="server" Height="41px" OnClick="Button1_Click" style="font-weight: 700; font-size: large" Text="بحث" Width="101px" />
+                </p>
+                <p>&nbsp;</p>
+               
+
+ 
+                <div>
+                    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+                        <AlternatingItemTemplate>
+                            <li style="background-color: #FFF8DC;">Name:
+                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                                <br />
+                                Book_Cover:
+                                <asp:Label ID="Book_CoverLabel" runat="server" Text='<%# Eval("Book_Cover") %>' />
+                                <br />
+                                Category:
+                                <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                                <br />
+                                Available:
+                                <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                                <br />
+                                Details:
+                                <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
+                                <br />
+                            </li>
+                        </AlternatingItemTemplate>
+                        <EditItemTemplate>
+                            <li style="background-color: #008A8C;color: #FFFFFF;">Name:
+                                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                                <br />
+                                Book_Cover:
+                                <asp:TextBox ID="Book_CoverTextBox" runat="server" Text='<%# Bind("Book_Cover") %>' />
+                                <br />
+                                Category:
+                                <asp:TextBox ID="CategoryTextBox" runat="server" Text='<%# Bind("Category") %>' />
+                                <br />
+                                Available:
+                                <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                                <br />
+                                Details:
+                                <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' />
+                                <br />
+                                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                            </li>
+                        </EditItemTemplate>
+                        <EmptyDataTemplate>
+                            No data was returned.
+                        </EmptyDataTemplate>
+                        <InsertItemTemplate>
+                            <li style="">Name:
+                                <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                                <br />Book_Cover:
+                                <asp:TextBox ID="Book_CoverTextBox" runat="server" Text='<%# Bind("Book_Cover") %>' />
+                                <br />Category:
+                                <asp:TextBox ID="CategoryTextBox" runat="server" Text='<%# Bind("Category") %>' />
+                                <br />Available:
+                                <asp:TextBox ID="AvailableTextBox" runat="server" Text='<%# Bind("Available") %>' />
+                                <br />Details:
+                                <asp:TextBox ID="DetailsTextBox" runat="server" Text='<%# Bind("Details") %>' />
+                                <br />
+                                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                            </li>
+                        </InsertItemTemplate>
+                        <ItemSeparatorTemplate>
+<br />
+                        </ItemSeparatorTemplate>
+                        <ItemTemplate>
+                            <li style="background-color: #DCDCDC;color: #000000;">Name:
+                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                                <br />
+                                Book_Cover:
+                                <asp:Label ID="Book_CoverLabel" runat="server" Text='<%# Eval("Book_Cover") %>' />
+                                <br />
+                                Category:
+                                <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                                <br />
+                                Available:
+                                <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                                <br />
+                                Details:
+                                <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
+                                <br />
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <li runat="server" id="itemPlaceholder" />
+                            </ul>
+                            <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                                <asp:DataPager ID="DataPager1" runat="server">
+                                    <Fields>
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                                    </Fields>
+                                </asp:DataPager>
+                            </div>
+                        </LayoutTemplate>
+                        <SelectedItemTemplate>
+                            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">Name:
+                                <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
+                                <br />
+                                Book_Cover:
+                                <asp:Label ID="Book_CoverLabel" runat="server" Text='<%# Eval("Book_Cover") %>' />
+                                <br />
+                                Category:
+                                <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                                <br />
+                                Available:
+                                <asp:Label ID="AvailableLabel" runat="server" Text='<%# Eval("Available") %>' />
+                                <br />
+                                Details:
+                                <asp:Label ID="DetailsLabel" runat="server" Text='<%# Eval("Details") %>' />
+                                <br />
+                            </li>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name], [Book_Cover], [Category], [Available], [Details] FROM [book]"></asp:SqlDataSource>
+                </div>
                
 
  
@@ -89,5 +236,6 @@
         
 	</div> <!-- end of wrapper -->
 </div> <!-- end of outer wrapper -->
+    </form>
 </body>
 </html>
