@@ -35,6 +35,7 @@ namespace Okaz_Library.Admin
                             Session.Add("ID", ID);
                             Session.Add("Status", status);
                             Session.Add("Name", name);
+                            Session.Add("AccessManager", DatabaseManager);
 
                         Response.Redirect("Manage.aspx");
                     }
@@ -43,7 +44,7 @@ namespace Okaz_Library.Admin
                Label4.Text = "الرجاء التحقق من البريد الالكتروني والرقم السري";
             }
 
-            catch(Exception)
+            catch(NullReferenceException)
             {
                 Label4.Text = "الرجاء التحقق من البريد الالكتروني والرقم السري";
             }
