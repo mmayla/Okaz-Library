@@ -31,22 +31,22 @@ namespace Okaz_Library.Admin
             try
             {
                 RequestID = int.Parse(TextBox1.Text);
-                status = ServerManager.getUniqueData("select [status] from OkazLibrary.dbo.request where R_ID=" + RequestID.ToString() + "");
-                BookID = int.Parse(ServerManager.getUniqueData("select book_ID from OkazLibrary.dbo.request where R_ID=" + RequestID.ToString() + ""));
-                UserID = int.Parse(ServerManager.getUniqueData("select U_ID from OkazLibrary.dbo.request where R_ID=" + RequestID.ToString() + ""));
-                name = ServerManager.getUniqueData("select Name from OkazLibrary.dbo.request where R_ID=" + RequestID.ToString() + "");
+                status = ServerManager.getUniqueData("select [status] from request where R_ID=" + RequestID.ToString() + "");
+                BookID = int.Parse(ServerManager.getUniqueData("select book_ID from request where R_ID=" + RequestID.ToString() + ""));
+                UserID = int.Parse(ServerManager.getUniqueData("select U_ID from request where R_ID=" + RequestID.ToString() + ""));
+                name = ServerManager.getUniqueData("select Name from request where R_ID=" + RequestID.ToString() + "");
 
                 if (status == "borrow")
                 {
-                    ServerManager.Query("UPDATE OkazLibrary.dbo.book SET Available = 0 WHERE book_ID = " + BookID + "");        
+                    ServerManager.Query("UPDATE book SET Available = 0 WHERE book_ID = " + BookID + "");        
                 }
                 else if (status == "loan")
                 {
-                    ServerManager.Query("UPDATE OkazLibrary.dbo.book SET Available = 1 WHERE book_ID = " + BookID + "");           
+                    ServerManager.Query("UPDATE book SET Available = 1 WHERE book_ID = " + BookID + "");           
                 }
 
-                ServerManager.Query("insert into OkazLibrary.dbo.User_book values(" + BookID.ToString() + "," + UserID.ToString() + ",'" + status + "',GETDATE(),'" + name + "')");
-                ServerManager.Query("DELETE FROM OkazLibrary.dbo.request WHERE R_ID = " + RequestID + "");
+                ServerManager.Query("insert into User_book values(" + BookID.ToString() + "," + UserID.ToString() + ",'" + status + "',GETDATE(),'" + name + "')");
+                ServerManager.Query("DELETE FROM request WHERE R_ID = " + RequestID + "");
 
                 Label2.Text = "تمت العملية بنجاح";
 
