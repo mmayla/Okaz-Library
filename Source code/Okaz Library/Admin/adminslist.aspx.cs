@@ -10,7 +10,6 @@ namespace Okaz_Library.Admin
     public partial class adminslist : System.Web.UI.Page
     {
         AccessManager ServerManager;
-        string DB3value;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -36,22 +35,32 @@ namespace Okaz_Library.Admin
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ServerManager = (AccessManager)Session["AccessManager"];
-            if (DropDownList1.SelectedValue == "add")
+            try
             {
-                ServerManager.Query("insert into manager values('"+TextBox1.Text+"','"+TextBox2.Text+"','"+TextBox3.Text+"','"+DropDownList2.SelectedValue+"')");
-            }
-            else if (DropDownList1.SelectedValue == "edit")
-            {
-                ServerManager.Query("UPDATE manager SET Name='"+TextBox1.Text+"', Email='"+TextBox2.Text+"' , [Phone Number]='"+TextBox3.Text+"' , [admin]='"+DropDownList2.SelectedValue+"' WHERE M_ID='"+DropDownList3.SelectedValue+"'");
-            }
-            else if (DropDownList1.SelectedValue == "delete")
-            {
-                ServerManager.Query("DELETE FROM manager WHERE M_ID='"+DropDownList3.SelectedValue+"'");
+                ServerManager = (AccessManager)Session["AccessManager"];
+                if (DropDownList1.SelectedValue == "add")
+                {
+                    ServerManager.Query("insert into manager values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + DropDownList2.SelectedValue + "')");
+                }
+                else if (DropDownList1.SelectedValue == "edit")
+                {
+                    ServerManager.Query("UPDATE manager SET Name='" + TextBox1.Text + "', Email='" + TextBox2.Text + "' , [Phone Number]='" + TextBox3.Text + "' , [admin]='" + DropDownList2.SelectedValue + "' WHERE M_ID='" + DropDownList3.SelectedValue + "'");
+                }
+                else if (DropDownList1.SelectedValue == "delete")
+                {
+                    ServerManager.Query("DELETE FROM manager WHERE M_ID='" + DropDownList3.SelectedValue + "'");
+                }
+
+                DropDownList3.DataBind();
+                ListView1.DataBind();
+
+                Label1.Text = "تمت العملية بنجاح";
             }
 
-            DropDownList3.DataBind();
-            ListView1.DataBind();
+            catch (Exception)
+            {
+                Label1.Text = "الرجاء التحقق من البيانات";
+            }
             
         }
 

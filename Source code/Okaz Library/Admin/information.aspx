@@ -32,71 +32,72 @@
 
 </head>
 <body>
+<form id="form1" runat="server">
+    <div id="templatemo_outer_wrapper">
 
-<div id="templatemo_outer_wrapper">
-
-	<div id="templatemo_wrapper">
+	    <div id="templatemo_wrapper">
     
-    	<div id="templatemo_header">
-            <div id="site_title">
-                <a href="../index.aspx" shape="rect">شارك واستمتع</a>
-            </div> <!-- end of site_title -->
+    	    <div id="templatemo_header">
+                <div id="site_title">
+                    <a href="../index.aspx" shape="rect">شارك واستمتع</a>
+                </div> <!-- end of site_title -->
             
-            <div id="templatemo_menu">
-                <ul>
-                    <li><a href="manage.aspx" >التحكم</a></li>
-                    <li><a href="information.aspx" class="current">البيانات</a></li>
-                    <li><a href="adminslist.aspx">المسؤولين</a></li>
-                    <li><a href="messages.aspx">الرسائل</a></li>              
-                </ul>  
-                <div><table style="width: 120px;">  
-                    <tr><td> <br /><br /> </td></tr>            
-                                <tr>
-                                    <td style="text-align:right">
-                                        <h5><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h5>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <!-- cleaner --> 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align:right">
-                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/login.aspx">تسجيل الخروج</asp:HyperLink>
-                                    </td>   
-                                </tr>
-                             </table></div>  	
-            </div> <!-- end of templatemo_menu -->
+                <div id="templatemo_menu">
+                    <ul>
+                        <li><a href="manage.aspx" >التحكم</a></li>
+                        <li><a href="information.aspx" class="current">البيانات</a></li>
+                        <li><a href="adminslist.aspx">المسؤولين</a></li>
+                        <li><a href="messages.aspx">الرسائل</a></li>              
+                    </ul>  
+                    <div><table style="width: 120px;">  
+                        <tr><td> <br /><br /> </td></tr>            
+                                    <tr>
+                                        <td style="text-align:right">
+                                            <h5><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- cleaner --> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">
+                                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/login.aspx">تسجيل الخروج</asp:HyperLink>
+                                        </td>   
+                                    </tr>
+                                 </table></div>  	
+                </div> <!-- end of templatemo_menu -->
             
-            <div class="cleaner"></div>
-		</div>   <!-- end of header -->
-        
-        <div id="templatemo_main">
-        	<div id="content_title_box">
-            	<div>
-                  <!-- page here -->
-                </div>	
-            </div> <!-- end of featured project -->
-        </div> <!-- end of main -->
-        
-        <div id="templatemo_content">
-        
-        	<div class="content_box cb_last">
-            	
                 <div class="cleaner"></div>
-            </div>
+		    </div>   <!-- end of header -->
+        
+            <div id="templatemo_main">
+        	    <div id="content_title_box">
+            	    <div>
+                      <!-- page here -->
+                    </div>	
+                </div> <!-- end of featured project -->
+            </div> <!-- end of main -->
+        
+            <div id="templatemo_content">
+        
+        	    <div class="content_box cb_last">
+            	
+                    <div class="cleaner"></div>
+                </div>
         	
-        </div> <!-- end of content -->
+            </div> <!-- end of content -->
         
-        <div id="templatemo_footer">
+            <div id="templatemo_footer">
 
-			<a href="index.aspx" >الرئيسية</a> | <a href="Admin/login.aspx">تسجيل دخول مسؤول</a> <br /><br />
+			    <a href="index.aspx" >الرئيسية</a> | <a href="Admin/login.aspx">تسجيل دخول مسؤول</a> <br /><br />
     
-        	Copyright © 2013 <a href="#">Okaz Library</a> | Designed by <a href="http://www.templatemo.com">Infinity Dream</a></div>
+        	    Copyright © 2013 <a href="#">Okaz Library</a> | Designed by <a href="http://www.templatemo.com">Infinity Dream</a></div>
         
-	</div> <!-- end of wrapper -->
-</div> <!-- end of outer wrapper -->
+	    </div> <!-- end of wrapper -->
+    </div> <!-- end of outer wrapper -->
+</form>
 </body>
 </html>
 

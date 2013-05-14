@@ -280,8 +280,9 @@
                             </asp:Panel>  
 
                             <table style="width: 100%;">
-                                    <tr><td style="text-align:center"><asp:Button ID="Button1" runat="server" Text="تأكـــــــــــيد" Height="30px" OnClick="Button1_Click" Width="100px" PostBackUrl="~/Admin/adminslist.aspx" /></td></tr>
-                                </table>
+                                <tr><td style="text-align:center"><asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label></td></tr>
+                                <tr><td style="text-align:center"><asp:Button ID="Button1" runat="server" Text="تأكـــــــــــيد" Height="30px" OnClick="Button1_Click" Width="100px" PostBackUrl="~/Admin/adminslist.aspx" /></td></tr>
+                            </table>
                         </asp:Panel>
                     </div>	
                 </div> <!-- end of featured project -->
