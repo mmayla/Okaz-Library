@@ -11,7 +11,16 @@ namespace Okaz_Library.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                Label1.Text = "اهلا " + Session["Name"].ToString();
 
+            }
+
+            catch (NullReferenceException)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

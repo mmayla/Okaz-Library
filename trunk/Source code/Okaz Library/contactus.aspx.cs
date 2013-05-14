@@ -23,12 +23,20 @@ namespace Okaz_Library
 
         }
 
+        void testing()
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                ServerManager.Query("Insert into [Message] values('علي محسن','ali@gmail.com','01110860288',GETDATE(),'شكرا لكم');");
+            }
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             try
             {
                 if (textvalidation())
-                ServerManager.Query("Insert into [OkazLibrary].[dbo].[Message] values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "');");
+                    ServerManager.Query("Insert into [Message] values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "',GETDATE(),'" + TextBox4.Text + "');");
             }
 
             catch (SqlException)

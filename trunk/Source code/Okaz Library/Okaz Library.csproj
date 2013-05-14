@@ -64,6 +64,10 @@
     <Content Include="Admin\login.aspx" />
     <Content Include="Admin\manage.aspx" />
     <Content Include="Admin\messages.aspx" />
+    <Content Include="App_Data\OkazLibrary.mdf" />
+    <Content Include="App_Data\OkazLibrary_log.ldf">
+      <DependentUpon>OkazLibrary.mdf</DependentUpon>
+    </Content>
     <Content Include="booklist.aspx" />
     <Content Include="contactus.aspx" />
     <Content Include="images.jpg" />
