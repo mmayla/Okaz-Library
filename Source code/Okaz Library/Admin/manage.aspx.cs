@@ -38,15 +38,18 @@ namespace Okaz_Library.Admin
 
                 if (status == "borrow")
                 {
-                    ServerManager.Query("UPDATE book SET Available = 0 WHERE book_ID = " + BookID + "");        
+                    ServerManager.Query("UPDATE book SET Available = 0 WHERE book_ID = " + BookID.ToString() + "");
+                    ServerManager.Query("UPDATE request SET [status] = 'count' WHERE R_ID = " + RequestID.ToString()+ "");
+                    ServerManager.Query("UPDATE request SET Rdate = GETDATE() WHERE R_ID = " + RequestID.ToString() + "");
                 }
                 else if (status == "loan")
                 {
-                    ServerManager.Query("UPDATE book SET Available = 1 WHERE book_ID = " + BookID + "");           
+                    ServerManager.Query("UPDATE book SET Available = 1 WHERE book_ID = " + BookID + "");
+                    ServerManager.Query("DELETE FROM request WHERE R_ID = " + RequestID + "");
                 }
 
                 ServerManager.Query("insert into User_book values(" + BookID.ToString() + "," + UserID.ToString() + ",'" + status + "',GETDATE(),'" + name + "')");
-                ServerManager.Query("DELETE FROM request WHERE R_ID = " + RequestID + "");
+                
 
                 Label2.Text = "تمت العملية بنجاح";
 
