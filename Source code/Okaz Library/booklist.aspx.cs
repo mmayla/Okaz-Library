@@ -10,7 +10,7 @@ namespace Okaz_Library
 {
     public partial class booklist : System.Web.UI.Page
     {
-
+        AccessManager ServerManager = new AccessManager();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,6 +27,11 @@ namespace Okaz_Library
 
 
             
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
