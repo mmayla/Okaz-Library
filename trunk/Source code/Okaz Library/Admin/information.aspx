@@ -562,7 +562,7 @@
                                     </tr>
                                 </SelectedItemTemplate>
                             </asp:ListView>
-                            <asp:SqlDataSource ID="borrowds" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT request.Name AS [اسم المقترض], users.[Phone Number] AS [رقم الهاتف], users.Email AS الايميل, book.Name AS [اسم الكتاب], book.Category AS التصنيف, request.Rdate AS التاريخ FROM book INNER JOIN request ON book.book_ID = request.book_ID INNER JOIN users ON request.U_ID = users.U_ID ORDER BY التاريخ DESC"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="borrowds" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT request.Name AS [اسم المقترض], users.[Phone Number] AS [رقم الهاتف], users.Email AS الايميل, book.Name AS [اسم الكتاب], book.Category AS التصنيف, request.Rdate AS التاريخ FROM book INNER JOIN request ON book.book_ID = request.book_ID INNER JOIN users ON request.U_ID = users.U_ID WHERE (request.status = 'count') ORDER BY التاريخ DESC"></asp:SqlDataSource>
                         </asp:Panel>
                     </div>	
                 </div> <!-- end of featured project -->
