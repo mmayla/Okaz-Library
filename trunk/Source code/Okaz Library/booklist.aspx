@@ -224,8 +224,28 @@
                 <asp:Panel ID="Panel2" runat="server">
                     <table style="width: 100%;">
                         <tr><td style="text-align:center"><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="book_ID" DataValueField="book_ID" ToolTip="اختر كتاب لتقترضه"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [book_ID] FROM [book]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [book_ID] FROM [book] where Available =1"></asp:SqlDataSource>
                             </td></tr>
+                        <tr>
+                            <td style="text-align:center">
+                                <table style="width: 100%;">
+                                    <tr><td>الاسم</td></tr>
+                                    <tr><td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td></tr>
+                                </table>
+                            </td>
+                            <td style="text-align:center">
+                                <table style="width: 100%;">
+                                    <tr><td>رقم الهاتف</td></tr>
+                                    <tr><td><asp:TextBox ID="TextBox2" runat="server" TextMode="Phone"></asp:TextBox></td></tr>
+                                </table>
+                            </td>
+                            <td style="text-align:center">
+                                <table style="width: 100%;">
+                                    <tr><td>الايميل</td></tr>
+                                    <tr><td><asp:TextBox ID="TextBox3" runat="server" TextMode="Email"></asp:TextBox></td></tr>
+                                </table>
+                            </td>
+                        </tr>
                         <tr><td style="text-align:center"><asp:Button ID="Button2" runat="server" Text="اقترض" Height="40px" OnClick="Button2_Click" Width="80px" /></td></tr>
                     </table>
 
